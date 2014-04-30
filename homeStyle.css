@@ -1,3 +1,146 @@
 body{
+	color:#1F1700;
 	background-color:black;
+	color:#EEEEEE;
+}
+
+#headerWrapper{
+	height:120px;
+	width:103%;
+	position:relative;
+	left:-15px;
+	top:-13px;
+}
+
+#header{
+	height:75px;
+	width:90%;
+	/*background-color:black;*/
+	margin:0 auto;
+	position:relative;
+	top:15px;
+	color:#EEEEEE;
+	padding:15px;
+	border:1px solid #EEEEEE;
+	background-image:url('frwrks.png');
+}
+
+#header > h2{
+display:inline-block;
+margin:0 auto;
+font-size:2.5em;
+}
+
+#header > a{
+	text-decoration:none;
+	color:#EEEEEE;
+	float:right;
+	background-color:black;
+}
+
+#header > a:hover{
+	color:blue;
+}
+
+#assignmentList{
+	margin:0 auto;
+	width:300px;
+	list-style-type:none;
+}
+
+#assignmentList > li{
+	border:1px solid white;
+	text-align:center;
+}
+
+#assignmentList > li > a{
+	text-decoration:none;
+	color:white;
+}
+
+/*this keeps the score board and the game panel lined up*/
+#game{
+	margin:0 auto;
+	width:300px;
+}
+
+#gameFrame{
+	margin:0 auto;
+	border: 5px solid #EEEEEE;
+	border-radius:10px;
+	height:300px;
+	width:300px;
+}
+
+#player1{
+	height:30px;
+	width:5px;
+	border-radius:3px;
+	background-color:#EEEEEE;
+	position:relative;
+	display:inline-block;
+	left:5px;
+}
+
+#player2{
+	height:30px;
+	width:5px;
+	border-radius:3px;
+	background-color:#EEEEEE;
+	position:relative;
+	display:inline-block;
+	left:280px;
+}
+
+#playerScores{
+	height:50px;
+	width:300px;
+	border:3px solid #EEEEEE;
+	border-radius:5px;
+	margin-top:5px;
+	display:inline-block;
+}
+
+#player1Container{
+	display:inline-block;
+	width:100px;
+	margin-left:30px;
+	text-align:center;
+}
+
+#player2Container{
+	display:inline-block;
+	width:100px;
+	margin-left:30px;
+	margin-right:20px;
+	text-align:center;
+}
+
+#player1Score{
+	border:2px solid #EEEEEE;
+	border-radius:4px;
+	height:20px;
+	width:30px;
+	position:relative;
+	top:-13px;
+	left:20px;
+}
+
+#player2Score{
+	border:2px solid #EEEEEE;
+	border-radius:4px;
+	height:20px;
+	width:30px;
+	position:relative;
+	top:-13px;
+	left:20px;
+}
+
+#ball{
+	position:relative;
+	height:5px;
+	width:5px;
+	border-radius:100%;
+	background-color:#EEEEEE;
+	display:inline-block;
 }
