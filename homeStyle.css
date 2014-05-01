@@ -1,146 +1,181 @@
+/*Generic page styles*/
 body{
-	color:#1F1700;
-	background-color:black;
-	color:#EEEEEE;
+   color:#1F1700;
+   background-color:black;
+   color:#EEEEEE;
 }
 
+/*Header styles*/
 #headerWrapper{
-	height:120px;
-	width:103%;
-	position:relative;
-	left:-15px;
-	top:-13px;
+   height:120px;
+   width:103%;
+   position:relative;
+   left:-15px;
+   top:-13px;
 }
 
 #header{
-	height:75px;
-	width:90%;
-	/*background-color:black;*/
-	margin:0 auto;
-	position:relative;
-	top:15px;
-	color:#EEEEEE;
-	padding:15px;
-	border:1px solid #EEEEEE;
-	background-image:url('frwrks.png');
+   height:75px;
+   width:90%;
+   margin:0 auto;
+   position:relative;
+   top:15px;
+   color:#EEEEEE;
+   padding:15px;
+   border:1px solid #EEEEEE;
+   background-image:url('frwrks.png');
 }
 
 #header > h2{
-display:inline-block;
-margin:0 auto;
-font-size:2.5em;
+   display:inline-block;
+   margin:0 auto;
+   font-size:2.5em;
 }
 
 #header > a{
-	text-decoration:none;
-	color:#EEEEEE;
-	float:right;
-	background-color:black;
+   text-decoration:none;
+   color:#EEEEEE;
+   float:right;
+   background-color:black;
 }
 
 #header > a:hover{
-	color:blue;
+   color:blue;
 }
 
+.content{
+   margin:0 auto;
+   width:600px;
+}
+
+.aboutMe{
+   margin-top:50px;
+   width:200px;
+   border:2px solid white;
+   border-radius:15px;
+   float:left;
+   display:inline-block;
+   padding:5px;
+}
+
+/*Assignment Page Styles*/
 #assignmentList{
-	margin:0 auto;
-	width:300px;
-	list-style-type:none;
+   margin:0 auto;
+   width:300px;
+   list-style-type:none;
 }
 
 #assignmentList > li{
-	border:1px solid white;
-	text-align:center;
+   border:1px solid white;
+   text-align:center;
 }
 
 #assignmentList > li > a{
-	text-decoration:none;
-	color:white;
+   text-decoration:none;
+   color:white;
 }
+
+/*
+---This is where the style specification for the game begins---
+*/
 
 /*this keeps the score board and the game panel lined up*/
 #game{
-	margin:0 auto;
-	width:300px;
+   display:inline-block;
+   margin-left:50px;
+   width:310px;
+   border:2px solid white;
+   border-radius:15px;
+   padding:5px;
 }
 
 #gameFrame{
-	margin:0 auto;
-	border: 5px solid #EEEEEE;
-	border-radius:10px;
-	height:300px;
-	width:300px;
+   margin:0 auto;
+   border: 5px solid #EEEEEE;
+   border-radius:10px;
+   height:300px;
+   width:300px;
 }
 
+/*These are the player classes, if you are wondering why there are two
+of them instead of just a class, if they are attached to the same style, 
+then they won't be able to move independently. This isn't a very good
+game of pond otherwise*/
 #player1{
-	height:30px;
-	width:5px;
-	border-radius:3px;
-	background-color:#EEEEEE;
-	position:relative;
-	display:inline-block;
-	left:5px;
+   height:30px;
+   width:5px;
+   border-radius:3px;
+   background-color:#EEEEEE;
+   position:relative;
+   display:inline-block;
+   left:5px;
 }
 
 #player2{
-	height:30px;
-	width:5px;
-	border-radius:3px;
-	background-color:#EEEEEE;
-	position:relative;
-	display:inline-block;
-	left:280px;
+   height:30px;
+   width:5px;
+   border-radius:3px;
+   background-color:#EEEEEE;
+   position:relative;
+   display:inline-block;
+   left:280px;
 }
 
 #playerScores{
-	height:50px;
-	width:300px;
-	border:3px solid #EEEEEE;
-	border-radius:5px;
-	margin-top:5px;
-	display:inline-block;
+   height:50px;
+   width:300px;
+   border:3px solid #EEEEEE;
+   border-radius:5px;
+   margin-top:5px;
+   display:inline-block;
 }
 
+/*
+Once again these are four different containers because they need to 
+be accessed independently of one another. Also, the containers need to
+have different locations specified.
+*/
 #player1Container{
-	display:inline-block;
-	width:100px;
-	margin-left:30px;
-	text-align:center;
+   display:inline-block;
+   width:100px;
+   margin-left:30px;
+   text-align:center;
 }
 
 #player2Container{
-	display:inline-block;
-	width:100px;
-	margin-left:30px;
-	margin-right:20px;
-	text-align:center;
+   display:inline-block;
+   width:100px;
+   margin-left:30px;
+   margin-right:20px;
+   text-align:center;
 }
 
 #player1Score{
-	border:2px solid #EEEEEE;
-	border-radius:4px;
-	height:20px;
-	width:30px;
-	position:relative;
-	top:-13px;
-	left:20px;
+   border:2px solid #EEEEEE;
+   border-radius:4px;
+   height:20px;
+   width:30px;
+   position:relative;
+   top:-13px;
+   left:20px;
 }
 
 #player2Score{
-	border:2px solid #EEEEEE;
-	border-radius:4px;
-	height:20px;
-	width:30px;
-	position:relative;
-	top:-13px;
-	left:20px;
+   border:2px solid #EEEEEE;
+   border-radius:4px;
+   height:20px;
+   width:30px;
+   position:relative;
+   top:-13px;
+   left:20px;
 }
 
+/*This last ID defines the ball object*/
 #ball{
-	position:relative;
-	height:5px;
-	width:5px;
-	border-radius:100%;
-	background-color:#EEEEEE;
-	display:inline-block;
+   position:relative;
+   height:5px;
+   width:5px;
+   border-radius:100%;
+   background-color:#EEEEEE;
+   display:inline-block;
 }
