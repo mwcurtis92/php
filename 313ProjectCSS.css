@@ -1,0 +1,57 @@
+body{
+   background-color:black;
+   color:white;
+}
+
+#contentWrapper{
+   border:1px solid white;
+   height:80%;
+   width:85%;
+   margin:0 auto;
+   margin-top:10px;
+}
+
+#ratingsWrapper{
+   margin:0 auto;
+}
+
+#studentData{
+   margin-top:60px;
+   margin-left:50px;
+}
+
+#siteLogo{
+   width:210px;
+   text-decoration:underline;
+   margin:0 auto;
+}
+
+#link{
+   position:relative;
+   top:75%;
+}
+
+#rateLink
+{
+   position:relative;
+   color:white;
+   margin-left:69%;
+   top:95%;
+}
+
+#Id{
+   width:200px;
+   float:left;
+   padding-left:50px;
+}
+
+#score{
+   width:150px;
+   float:right;
+}
+
+#ratingsForm{
+   border:1px solid white;
+   margin-left:20px;
+   width:525px;
+}
