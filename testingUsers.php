@@ -1,5 +1,5 @@
 <?php
-   /*
+  
    $dbHost = "";
    $dbPort = "";
    $dbUser = "";
@@ -21,7 +21,7 @@
       }
       catch (PDOException $ex)
       {
-         echo "Error!: " . $ex->getMessage();
+         echo "Error!: ";
          die();
       }
    }
@@ -32,7 +32,7 @@
       $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
       $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
    }
-*/
+
 ?>
 <html>
 <head>
