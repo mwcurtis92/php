@@ -1,17 +1,19 @@
 <?php
    
-   	$dbHost = "";
+   $dbHost = "";
    $dbPort = "";
    $dbUser = "";
    $dbPassword = "";
 
-   $dbName = "testdb";
+   $dbName = "students";
 
 	$openShiftVar = getenv('OPENSHIFT_MYSQL_DB_HOST');
 
    if($openShiftVar === null || $openShiftVar == "")
    {
-      $user = "php";
+      try
+      {
+         $user = "php";
          $password = "Jordin656";
          $host = getenv ('OpenShift')
       
@@ -29,12 +31,8 @@
       $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
       $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
       $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-      }
-
-?>
-
-
    }
+
 ?>
 <html>
 <head>
