@@ -1,5 +1,5 @@
 <?php
-   
+   /*
    $dbHost = "";
    $dbPort = "";
    $dbUser = "";
@@ -32,7 +32,7 @@
       $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
       $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
    }
-
+*/
 ?>
 <html>
 <head>
@@ -54,7 +54,7 @@
    </div>
 </div>
 
-<?php
+<?/*php
   $db = new PDO("mysql:host=localhost; dbname=students", $user, $password);
    echo "<div id = 'studentData'>";
  
@@ -78,7 +78,7 @@
 
    echo "</div>";
 
-?>
+*/?>
 <div id = "link">
 <a href = "ratingsPage.php" id = "rateLink"> Rate My Group Members!</a>
 </div>
