@@ -55,8 +55,7 @@ $db = "";
 </div>
 
 <?php
-  //$db = new PDO("mysql:host=localhost; dbname=students", $user, $password);
-   echo "<div id = 'studentData'>";
+   //echo "<div id = 'studentData'>";
  
    foreach ($db->query('SELECT * FROM student') as $row)
    {
@@ -76,8 +75,7 @@ $db = "";
       
    }
 
-   echo "</div>";
-   echo "This is a test";
+   //echo "</div>";
    
 ?>
 <div id = "link">
