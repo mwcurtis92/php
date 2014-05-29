@@ -54,7 +54,7 @@ $db = "";
    </div>
 </div>
 
-<?/*php
+<?php
   $db = new PDO("mysql:host=localhost; dbname=students", $user, $password);
    echo "<div id = 'studentData'>";
  
@@ -78,7 +78,7 @@ $db = "";
 
    echo "</div>";
 
-*/?>
+?>
 <div id = "link">
 <a href = "ratingsPage.php" id = "rateLink"> Rate My Group Members!</a>
 </div>
