@@ -1,25 +1,27 @@
 <?php
-   
-   	$dbHost = "";
+  
+   $dbHost = "";
    $dbPort = "";
    $dbUser = "";
    $dbPassword = "";
-
-   $dbName = "testdb";
+$db = "";
+   $dbName = "students";
 
 	$openShiftVar = getenv('OPENSHIFT_MYSQL_DB_HOST');
 
    if($openShiftVar === null || $openShiftVar == "")
    {
-      $user = "php";
+      try
+      {
+         $user = "php";
          $password = "Jordin656";
-         $host = getenv ('OpenShift')
+         //$host = getenv ('OpenShift')
       
          $db = new PDO("mysql:host=localhost;dbname=students", $user, $password);
       }
       catch (PDOException $ex)
       {
-         echo "Error!: " . $ex->getMessage();
+         echo "Error!: ";
          die();
       }
    }
@@ -29,7 +31,7 @@
       $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
       $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
       $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-      }
+   }
 
 ?>
 
@@ -45,7 +47,6 @@
 <div id = "contentWrapper">
    <div id = "ratingsWrapper">
 <?php
-  $db = new PDO("mysql:host=localhost;dbname=students", $user, $password);
    echo "<div id = 'studentData'>";
  
    foreach ($db->query('SELECT * FROM student') as $row)

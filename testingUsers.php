@@ -55,7 +55,7 @@ $db = "";
 </div>
 
 <?php
-   //echo "<div id = 'studentData'>";
+   echo "<br /><br /><div id = 'studentData'>";
  
    foreach ($db->query('SELECT * FROM student') as $row)
    {
@@ -75,11 +75,11 @@ $db = "";
       
    }
 
-   //echo "</div>";
+   echo "</div>";
    
 ?>
 <div id = "link">
-<a href = "ratingsPage.php" id = "rateLink"> Rate My Group Members!</a>
+<a href = "ratingsPage.php" id = "rateLink">Rate My Group Members!</a>
 </div>
 </div>
 </body>
