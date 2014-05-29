@@ -55,7 +55,7 @@ $db = "";
 </div>
 
 <?php
-  $db = new PDO("mysql:host=localhost; dbname=students", $user, $password);
+  /*$db = new PDO("mysql:host=localhost; dbname=students", $user, $password);
    echo "<div id = 'studentData'>";
  
    foreach ($db->query('SELECT * FROM student') as $row)
@@ -76,8 +76,9 @@ $db = "";
       
    }
 
-   echo "</div>";
-
+   echo "</div>";*/
+   echo "This is a test";
+   
 ?>
 <div id = "link">
 <a href = "ratingsPage.php" id = "rateLink"> Rate My Group Members!</a>
