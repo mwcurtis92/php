@@ -7,7 +7,7 @@
    }
    catch (PDOException $ex)
    {
-      echo "Error!: " . $ex->getMessage();
+      //echo "Error!: " . $ex->getMessage();
       die();
    }
 ?>
@@ -32,8 +32,8 @@
 </div>
 
 <?php
-  $db = new PDO("mysql:host=localhost;dbname=students", $user, $password);
-   echo "<div id = 'studentData'>";
+  $db = new PDO("mysql:host=localhost; dbname=students", $user, $password);
+   //echo "<div id = 'studentData'>";
  
    foreach ($db->query('SELECT * FROM student') as $row)
    {
@@ -53,7 +53,7 @@
       
    }
 
-   echo "</div>";
+   //echo "</div>";
 
 ?>
 <div id = "link">
