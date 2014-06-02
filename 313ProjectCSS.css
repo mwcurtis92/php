@@ -3,6 +3,11 @@ body{
    color:white;
 }
 
+form{
+   background-color:black;
+   color:white;
+}
+
 #contentWrapper{
    border:1px solid white;
    height:80%;

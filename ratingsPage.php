@@ -47,11 +47,14 @@ $db = "";
 <div id = "contentWrapper">
    <div id = "ratingsWrapper">
 <?php
-   echo "<div id = 'studentData'>";
+   $uID = $_GET['uId'];
+   echo $uID;
+
+ echo "<div id = 'studentData'>";
  
    foreach ($db->query('SELECT * FROM student') as $row)
    {
-      echo $row['displayName'] . " - <a style = 'color:white;' href = 'ratePage.php/?name=" . $row['displayName'] . "'>Rate Me!</a><br />";      
+      echo $row['displayName'] . " - <a style = 'color:white;' href = '../ratePage.php?name=" . $row['displayName'] . "&uId=" . $uID . "'>Rate Me!</a><br />";      
    }
 
    echo "</div>";
