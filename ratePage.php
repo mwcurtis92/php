@@ -88,45 +88,7 @@ $db = "";
       <input type = 'submit' value = 'Submit Rating'/>
    </form>";
    ?>
-   
-   <?php
-/*    $tbrId = $db->query('SELECT * FROM student WHERE displayName="Makz"');
-
-   $tbrId->setFetchMode(PDO::FETCH_ASSOC);
-   $r = $tbrId->fetch();
-    $uID = $r['userId'];
-   echo $uID;
   
-  $q = "SELECT * FROM ratings WHERE userId = " . $uID;
-   $ratingDB = $db->query($q); 
-   $ratingDB->setFetchMode(PDO::FETCH_ASSOC);
-   $g = $ratingDB->fetch();
-   echo $g['score'];
-   
-   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); */
-   
-   //$userID = 123456789;
-   //$authorID = 987654321;
-   //$score = 5;
-   
-  // $stmt = $db->prepare("INSERT INTO ratings (userID, authorID, score) VALUES (:userId, :authorID, :score)");
-   
-  /*  $userId = 123456789;
-   $authorId = 987654321;
-   $score = 5;
-   $db->query("INSERT INTO ratings (userId, authorId, score) VALUES ($userId, $authorId,7)"); */
-/*    $stmt = $db->prepare("INSERT INTO ratings (userId, authorId, score) VALUES (:userId, :authorId, :score)");
-   
-   $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-   $stmt->bindParam(':authorId', $authorId, PDO::PARAM_INT);
-   $stmt->bindParam(':score', $score, PDO::PARAM_INT);
-   
-   
-$stmt->execute();
-  //$stmt->execute();
-
-   echo "here"; */
-   ?>
 </div>
 </body>
 </html>
