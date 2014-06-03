@@ -37,7 +37,6 @@
 
    <title>Rate My Group</title>
    <link href = "313ProjectCSS.css" rel = "stylesheet" type = "text/css" />
- </head>
 
  <script>
 /*
@@ -57,12 +56,15 @@ This then dynamically creates the link in the link id div with the query string.
    }
 
 </script>
+</head>
+
 <body>
- <h1 id = "SiteLogo"><em>Rate My Group<em></h1> 
+ <h1 id = "SiteLogo"><em>Rate My Group</em></h1> 
  <div id = "contentWrapper">
  
  
  <?php
+   echo "hey there";
   $db = new PDO("mysql:host=localhost;dbname=students", $user, $password);
    echo "<div id = 'studentData'>";
  
