@@ -69,7 +69,7 @@ This then dynamically creates the link in the link id div with the query string.
    foreach ($db->query('SELECT * FROM student') as $row)
    {
       $userId = $row['userId'];
-      echo $userId . " score: ";
+      echo "ID: " . $userId . " - Score: ";
             
       $stmt = $db->prepare("SELECT * FROM ratings WHERE userId = :userId");
       $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
@@ -84,7 +84,7 @@ This then dynamically creates the link in the link id div with the query string.
          $count += 1;
       }
       $totalScore /= $count;
-      echo "<div class = 'spacingDiv'></div>" . $totalScore . "<br />";
+      echo $totalScore . "<br />";
    }
 
    echo "</div>";
