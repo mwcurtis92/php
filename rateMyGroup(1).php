@@ -61,35 +61,36 @@ This then dynamically creates the link in the link id div with the query string.
  <h1 id = "SiteLogo"><em>Rate My Group<em></h1> 
  <div id = "contentWrapper">
  </div>
- 
+
  <?php
-  $db = new PDO("mysql:host=localhost;dbname=students", $user, $password);
+
+   echo "<br /><br /><div id = 'studentData'>";
+   echo "Hello";
+  //$db = new PDO("mysql:host=localhost;dbname=students", $user, $password);
+
    echo "<div id = 'studentData'>";
- 
-   foreach ($db->query('SELECT * FROM student') as $row)
-   {
-      $userId = $row['userId'];
-      echo $userId . " score: ";
-            
-      $stmt = $db->prepare("SELECT * FROM ratings WHERE userId = :userId");
-      $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
-      $stmt->execute();
-      
-      $result = $stmt->fetchAll();
+
+    foreach ($db->query('SELECT * FROM student') as $row)
+    {
+       $stmt->execute();
+       $result = $stmt->fetchAll();
       $count = 0;
       $totalScore = 0;
-      foreach($result as $values)
-      {
+
+       foreach($result as $values)
+       {
+         echo $values['score'] . "<br />";
          $totalScore += $values['score'];
          $count += 1;
-      }
+       }
+     
       $totalScore /= $count;
       echo $totalScore . "<br />";
-   }
+    }
 
-   echo "</div>";
+    echo "</div>";
 
-?>
+ ?>
 
  <div id = "link">
 
