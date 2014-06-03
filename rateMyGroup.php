@@ -84,7 +84,7 @@ This then dynamically creates the link in the link id div with the query string.
          $count += 1;
       }
       $totalScore /= $count;
-      echo $totalScore . "<br />";
+      echo "<div class = 'spacingDiv'></div>" . $totalScore . "<br />";
    }
 
    echo "</div>";
