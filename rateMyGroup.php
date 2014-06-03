@@ -64,9 +64,6 @@ This then dynamically creates the link in the link id div with the query string.
  
  
  <?php
-   echo "hey there";
-  //$db = new PDO("mysql:host=localhost;dbname=students", $user, $password);
-   echo "getting here";
  echo "<div id = 'studentData'>";
  
    foreach ($db->query('SELECT * FROM student') as $row)

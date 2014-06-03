@@ -49,7 +49,6 @@ $db = "";
    {      
       //set the authorId 
       $uId = $_GET['uId'];
-      echo $uId;
       $authorId = $uId;
       
       //compute the new rating
@@ -59,7 +58,6 @@ $db = "";
       $score = $rating;
 
       //determine and set the userId (the one who is getting rated)
-      echo "<p>Rating: $rating</p>";
       $rateeName = $_GET['name'];
       $userId = 0;
       foreach ($db->query('SELECT * FROM student') as $row)
@@ -67,7 +65,6 @@ $db = "";
          if($row['displayName'] == $rateeName)
          {
             $userId = $row['userId'];
-            echo $userId . " = " . $row['displayName'];
             break;
          }
       }

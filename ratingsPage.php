@@ -48,7 +48,6 @@ $db = "";
    <div id = "ratingsWrapper">
 <?php
    $uID = $_GET['uId'];
-   echo $uID;
 
  echo "<div id = 'studentData'>";
  
