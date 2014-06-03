@@ -85,6 +85,6 @@ $db = "";
       following link to return to the home page.</h3>";
   }
    ?>
-    <a href = "../testingUsers.php"> Home</a>
+    <a href = "../rateMyGroup.php"> Home</a>
 </body>
 </html>
