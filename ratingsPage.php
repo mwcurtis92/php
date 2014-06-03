@@ -42,7 +42,7 @@ $db = "";
 </head>
 
 <body>
-<h1 id = "SiteLogo"><em>Rate My Group<em></h1>
+<h1 id = "SiteLogo"><em>Rate My Group</em></h1>
 
 <div id = "contentWrapper">
    <div id = "ratingsWrapper">
