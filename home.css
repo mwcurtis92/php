@@ -1,0 +1,99 @@
+/*
+Because the home page of the website is a little more complex stylistically, it has it's
+own CSS. As usual, I've arranged it starting with first the basic elements, then the IDs, 
+and finally the classes.
+*/
+
+body{
+   color:white;
+   background-color:black;
+}
+
+a{
+   color:white;
+}
+
+#header{
+   width:100%;
+   height:80px;
+   border-bottom:1px solid #0066CC;
+}
+
+#content{
+   width:90%;
+   height: 500px;
+   border-left:2px solid white;
+   margin:0 auto;
+   margin-top:5px;
+   padding:5px;
+}
+
+#aboutContent{
+   border-left:1px solid white;
+   margin:0 auto;
+   padding:5px;
+   width:90%;
+   height: 500px;
+   margin-top:5px;
+}
+
+#scrollingImgPane{
+   height:250px;
+   width:500px;
+   margin:0 auto;
+}
+
+#scrollImg{
+   height:100%;
+   width:100%;
+}
+
+#sIPLeft{
+   width:70%;
+   float:left;
+   height:100%;
+}
+
+#sIPRight{
+   width:29%;
+   float:right;
+   height:100%;
+}
+
+#loginLink{
+   border:1px solid gray;
+   color:black;
+   background-color:#CCCCCC;
+   text-decoration:none;
+   border-radius:2px;
+   padding:2px;
+   float:right;
+   position:relative;
+   top:80px;
+}
+
+#loginLink:hover{
+   background-color:#AAAAAA;
+}
+
+.barLinkDiv{
+   height:32%;
+   width:100%;
+   border:1px solid black;
+   background-color:0066CC;
+}  
+
+.barLinkLink{
+   color: white;
+   text-align:center;
+   position:relative;
+   text-decoration:none;
+}
+
+.barLinkDiv:hover{
+   background-color:blue;
+}
+
+.barLinkDiv:active{
+   background-color:#003366;
+}

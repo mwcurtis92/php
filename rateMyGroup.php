@@ -1,75 +1,43 @@
  <?php 
-   $dbHost = "";
-   $dbPort = "";
-   $dbUser = "";
-   $dbPassword = "";
-   $db = "";
-
-   $dbName = "students";
-	$openShiftVar = getenv('OPENSHIFT_MYSQL_DB_HOST');
-
-   if($openShiftVar === null || $openShiftVar == "")
-   {
-      try
-      {
-         $user = "php";
-         $password = "Jordin656";
-
-         $db = new PDO("mysql:host=localhost;dbname=students", $user, $password);
-      }
-      catch (PDOException $ex)
-      {
-         echo "Error!: ";
-         die();
-      }
+   //if credentials are not supplied via cookie, redirect them back to the login.
+   if (!isset($_COOKIE["uID"]))
+   {   
+      header( 'Location: login.php' );
+      die();
    }
-   else{
-      $dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
-      $dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
-      $dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-      $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-      $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-    }
 
+   //the credentials file, required on all php documents.
+   require 'credentials.php';
  ?>
+ 
+ <!--
+   This lists the student id's and their score. It is actually because of this page that I
+   didn't feel that it was worth it to add any security verification in terms of the login 
+   page. Once the student logs in the first time, they can then go in and see all of the
+   student id's and just log back in with one of theirs. 
+ -->
+ 
  <html>
  <head>
 
-   <title>Rate My Group</title>
+   <title>Rate My Group | Home</title>
    <link href = "313ProjectCSS.css" rel = "stylesheet" type = "text/css" />
-
- <script>
-/*
-The point of this prompt is to get the user ID, because, obviously, these ID's aren't 
-really a secret., I have them passed on the query string. I might change this to a post, 
-but that would only be if I found a way to make the ID's a secret. As it is, someone can 
-just enter someone else's ID and rate themselves.
-This then dynamically creates the link in the link id div with the query string.
-*/
-
-   function addLink()
-   {
-      var id = prompt("Please enter your ID");
-      var queryString = "../ratingsPage.php?uId=" + id;
-      var linkDiv = document.getElementById("link");
-      linkDiv.innerHTML = "<a style = 'color:white;' href = '" + queryString + "'>Rate My Group</a>";
-   }
-
-</script>
-</head>
-
-<body>
- <h1 id = "SiteLogo"><em>Rate My Group</em></h1> 
- <div id = "contentWrapper">
- 
- 
+ </head>
+ <body>
+   <div id = "header">
+      <h1 id = "SiteLogo"><em>Rate My Group<em></h1> 
+   </div>
+ <div class = "contentWrapper">
+  
+ <h3 class = 'headerStudent'>Student ID</h3><h3 class = 'headerScore'> Score</h3>
  <?php
- echo "<div id = 'studentData'>";
  
+   echo "<div id = 'studentData'>";
+   
    foreach ($db->query('SELECT * FROM student') as $row)
    {
       $userId = $row['userId'];
-      echo "ID: " . $userId . " - Score: ";
+      echo $userId . "<div class = 'score'> ";
             
       $stmt = $db->prepare("SELECT * FROM ratings WHERE userId = :userId");
       $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
@@ -83,29 +51,20 @@ This then dynamically creates the link in the link id div with the query string.
          $totalScore += $values['score'];
          $count += 1;
       }
-      $totalScore /= $count;
-      echo $totalScore . "<br />";
+      if($count != 0)
+      {
+         $totalScore /= $count;
+      }
+      echo round($totalScore) . "</div><br />";
    }
 
    echo "</div>";
-
 ?>
 
- <div id = "link">
-
-<a href = "ratingsPage.php" id = "rateLink">Rate My Group Members!</a>
-
+ <div id = "links">
+   <a <?php echo "href = 'ratingsPage.php?uId=" . $_COOKIE['uID'] . "'";?> class = "linkTextFormat">Rate My Group Members!</a><br />
+   <a href = "addStudent.php" class = "linkTextFormat">Add students</a>
  </div>
-<script>
-
-   addLink();
-
-</script>
-</div>
-
-
  </div>
-
  </body>
-
  </html>
