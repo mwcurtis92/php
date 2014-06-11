@@ -1,4 +1,5 @@
 <?php
+	echo "in credentials.php";
    $dbHost = "";
    $dbPort = "";
    $dbUser = "";
