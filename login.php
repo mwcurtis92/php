@@ -5,7 +5,7 @@
    {
       setcookie('uID', $_POST['userID'], time()+3600);
       setcookie('classNum', $_POST['classNum'], time() +3600);
-      header( 'Location: ../rateMyGroup.php' );
+      header( 'Location: rateMyGroup.php' );
 	   die();
    }
 ?>
