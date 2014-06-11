@@ -5,12 +5,16 @@
       header( 'Location: login.php' );
       die();
    }
+
    //the credentials file, required on all php documents.
    require 'credentials.php';
  ?>
  
  <!--
-   This lists the student names and their score.
+   This lists the student id's and their score. It is actually because of this page that I
+   didn't feel that it was worth it to add any security verification in terms of the login 
+   page. Once the student logs in the first time, they can then go in and see all of the
+   student id's and just log back in with one of theirs. 
  -->
  
  <html>

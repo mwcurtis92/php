@@ -17,40 +17,50 @@
 
 <body>
    <div id = "header">
-      <h1 id = "SiteLogo"><em><a href = 'rateMyGroup.php'>Rate My Group</a><em></h1> 
+      <h1 id = "SiteLogo"><em><a href = 'rateMyGroup.php'>Rate My Group</a></em></h1> 
       <a style = "float:right;" href = "logout.php">logout</a>
    </div>
    <div class = "contentWrapper">
 
       <div id = "ratingsWrapper">
          <?php
-            $countQ  = $db->query("SELECT COUNT(*) FROM student");
-            $countVal = $countQ->fetch(PDO::FETCH_NUM);
-            $count = $countVal[0];
-            
-            $vanityLimit = round($count/3);
+            echo "<table>";            
+            $vanityLimit = 3;
             
             $uID = $_GET['uId'];
-            $index = 0; 
-            $divNum = 1;
+            $index = -1; 
             
-            echo "<div class = 'column" . $divNum . "'>";
+            $bgColor =  "#222222";
+            $textColor = "#FFFFFF";
             
+            echo "<tr style = 'background-color:" . $bgColor . "; '>";
             foreach ($db->query("SELECT * FROM student WHERE userId != $uID ORDER BY displayName") as $row)
             {
+               $index++;
+               
                if($index == $vanityLimit)
                {
-                  echo "</div>";
-                  $divNum++;
-                  echo "<div class = 'column" . $divNum . "'>";
+                  if ($bgColor == "#222222")
+                  {
+                     $bgColor = "#CCCCCC";
+                     $textColor = "#000000";
+                  }
+                  else
+                  {
+                     $bgColor = "#222222";
+                     $textColor = "#FFFFFF";
+                  }
+
+                  echo "</td></tr><tr style = 'background-color:" . $bgColor . "; color:" . $textColor .";'>";;
                   $index = 0;
                }
                
-               echo $row['displayName'] . " - <a style = 'color:white;' href = '../ratePage.php?name=" . $row['displayName'] . "&uId=" . $uID . "'>Rate Me!</a><br />";      
-               $index++;
-         }
+               echo "<td width=200>";
+               echo $row['displayName'] . " - <a style = 'col" . $textColor . ";' href = '../ratePage.php?name=" . $row['displayName'] . "&uId=" . $uID . "'>Rate Me!</a><br />";      
+               echo "</td>";
+            }
          
-            echo "</div>";
+            echo "</tr></table>";
          ?>
       </div>
    </div>
