@@ -9,6 +9,7 @@ echo "This is a test";
 echo "this is the second test";
    //the credentials file, required on all php documents.
    require 'credentials.php';
+echo "this is the third test";
  ?>
  
  <!--
