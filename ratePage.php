@@ -16,7 +16,7 @@
 
 <body>
     <div id = "header">
-      <h1 id = "SiteLogo"><em>Rate My Group<em></h1> 
+      <h1 id = "SiteLogo"><em><a href = 'rateMyGroup.php'>Rate My Group</a><em></h1> 
    </div>
    <div class = "contentWrapper">
       <h3><em><u>Instructions</u></em></h3>
@@ -30,12 +30,48 @@
          $link = "../updateDB.php?uId=" . $_GET['uId'] . "&name=" . $_GET['name'];
    
          echo "<form id = 'ratingsForm' action = '" . $link . "' Method = 'post'>
-               How hard working was this group member? <input id = 'one' name = 'one' type = 'text' /><br />
+                  How hard working was this group member? 
+                  <input type = 'radio' id = 'one' name = 'one' type = 'text' value = '1' />1
+                  <input type = 'radio' id = 'one' name = 'one' type = 'text'  value = '2' />2
+                  <input type = 'radio' id = 'one' name = 'one' type = 'text'  value = '3' />3
+                  <input type = 'radio' id = 'one' name = 'one' type = 'text' value = '4' />4
+                  <input type = 'radio' id = 'one' name = 'one' type = 'text' value = '5' />5<br />
+                  How friendly was this group member?
+                  <input type = 'radio' id = 'one' name = 'two' type = 'text' value = '1'  />1
+                  <input type = 'radio' id = 'one' name = 'two' type = 'text' value = '2' />2
+                  <input type = 'radio' id = 'one' name = 'two' type = 'text' value = '3' />3
+                  <input type = 'radio' id = 'one' name = 'two' type = 'text' value = '4' />4
+                  <input type = 'radio' id = 'one' name = 'two' type = 'text' value = '5' />5<br />
+                  How well did this group member understand the material?
+                  <input type = 'radio' id = 'one' name = 'three' type = 'text' value = '1'  />1
+                  <input type = 'radio' id = 'one' name = 'three' type = 'text' value = '2' />2
+                  <input type = 'radio' id = 'one' name = 'three' type = 'text' value = '3' />3
+                  <input type = 'radio' id = 'one' name = 'three' type = 'text' value = '4'/>4
+                  <input type = 'radio' id = 'one' name = 'three' type = 'text' value = '5' />5<br />
+                  <input type = 'submit' value = 'Submit Rating'/>
+                  </form>";
+         
+             /*  How hard working was this group member? <input id = 'one' name = 'one' type = 'text' /><br />
                How friendly was this group member? <input id = 'two' name = 'two' type = 'text' /><br />
                How well did this group member understand the material? <input id = 'three' name = 'three' type = 'text'/><br />
                <input type = 'submit' value = 'Submit Rating'/>
-            </form>";
+            </form>";*/
       ?>
    </div>
+   
+    <div id = "links">
+   <a class = "barLinkLink" href = "rateMyGroup.php" class = "linkTextFormat">
+      <div class = "barLinkDiv">Home</div>
+   </a>
+   
+   <a class = "barLinkLink"<?php echo "href = 'ratingsPage.php?uId=" . $_COOKIE['uID'] . "'";?> class = "linkTextFormat">
+      <div class = "barLinkDiv">Rate My Group Members!</div>
+   </a>
+   
+   <a class = "barLinkLink" href = "adminLogin.php" class = "linkTextFormat">
+      <div class = "barLinkDiv">Register student</div>
+   </a>
+   
+ </div>
 </body>
 </html>

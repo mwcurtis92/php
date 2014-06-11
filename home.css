@@ -41,6 +41,7 @@ a{
    height:250px;
    width:500px;
    margin:0 auto;
+   margin-top:15px;
 }
 
 #scrollImg{
@@ -74,6 +75,15 @@ a{
 
 #loginLink:hover{
    background-color:#AAAAAA;
+}
+
+#introPara{
+   position:relative;
+   padding:3px;
+   top:15px;
+   width: 474px;
+   border:1px solid white;
+   margin:0 auto;
 }
 
 .barLinkDiv{

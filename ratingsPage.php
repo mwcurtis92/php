@@ -17,10 +17,11 @@
 
 <body>
    <div id = "header">
-      <h1 id = "SiteLogo"><em>Rate My Group<em></h1> 
+      <h1 id = "SiteLogo"><em><a href = 'rateMyGroup.php'>Rate My Group</a><em></h1> 
+      <a style = "float:right;" href = "logout.php">logout</a>
    </div>
    <div class = "contentWrapper">
-      <h3><u>Class List<u></h3>
+
       <div id = "ratingsWrapper">
          <?php
             $countQ  = $db->query("SELECT COUNT(*) FROM student");
@@ -53,5 +54,21 @@
          ?>
       </div>
    </div>
+   
+    <div id = "links">
+      <a class = "barLinkLink" href = "rateMyGroup.php" class = "linkTextFormat">
+         <div class = "barLinkDiv">Home</div>
+      </a>
+   
+      <a class = "barLinkLink"<?php echo "href = 'ratingsPage.php?uId=" . $_COOKIE['uID'] . "'";?> class = "linkTextFormat">
+         <div class = "barLinkDiv">Rate My Group Members!</div>
+      </a>
+   
+      <a class = "barLinkLink" href = "adminLogin.php" class = "linkTextFormat">
+         <div class = "barLinkDiv">Register student</div>
+      </a>
+   
+   </div>
+   
 </body>
 </html>

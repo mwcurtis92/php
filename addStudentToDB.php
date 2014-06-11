@@ -17,17 +17,44 @@
 </head>
 <body>
    <div id = "header">
-      <h1 id = "SiteLogo"><em>Rate My Group<em></h1> 
+      <h1 id = "SiteLogo"><em><a href = 'rateMyGroup.php'>Rate My Group</a><em></h1> 
+      <a style = "float:right;" href = "logout.php">logout</a>
    </div>
    <div class = "contentWrapper">
    <?php
    /*
       Insert the new rating into the data base.
    */
-      if("" != trim($_POST['sName']))
+  
+      $failure = "<h3>Error, student could not be added.</h3>";
+   
+      //check t make sure the displayName is unique before adding it to the database
+      $newDN  = trim(ucwords($_POST['sName']));
+      $class = $_COOKIE['classNum'];
+      $add = true;
+      
+      if($class == "" || $class == 0)
+      {
+         $add = false;
+      }
+      
+     $qury = "SELECT * FROM student WHERE classNum=" . $class;
+      
+      foreach ($db->query($qury) as $row)
+      {
+         if($row['displayName'] == $newDN)
+         {
+            $add = false;
+            $failure = "<h3>A student with that name already exists. Student was not added.</h3>";
+         }
+      }
+      
+      if("" != trim($_POST['sName']) && $add == true)
       {        
-         $q = $db->prepare("INSERT INTO student (displayName) VALUES (?)") or die("ERROR! Contact your system admin");
+         $q = $db->prepare("INSERT INTO student (displayName, class) VALUES (?,?)") or die("ERROR! Contact your system admin");
          $q->bindParam(1, trim(ucwords($_POST['sName'])));
+         $q->bindParam(2, $class);
+         
          $q->execute();
 
          //tell the user that the submission was successful.
@@ -37,7 +64,7 @@
       else
       {
          //tell the user that the submission was unsuccessful
-         echo "<h3>Error, student could not be added.</h3>";
+         echo $failure;
       }
    ?>
    
@@ -46,5 +73,20 @@
    <p>To add another student, click the following link</p>
    <a href = "../addStudent.php" class = "linkTextFormat">Add Student</a>
    </div>
+   
+    <div id = "links">
+   <a class = "barLinkLink" href = "rateMyGroup.php" class = "linkTextFormat">
+      <div class = "barLinkDiv">Home</div>
+   </a>
+   
+   <a class = "barLinkLink"<?php echo "href = 'ratingsPage.php?uId=" . $_COOKIE['uID'] . "'";?> class = "linkTextFormat">
+      <div class = "barLinkDiv">Rate My Group Members!</div>
+   </a>
+   
+   <a class = "barLinkLink" href = "adminLogin.php" class = "linkTextFormat">
+      <div class = "barLinkDiv">Register student</div>
+   </a>
+   
+ </div>
 </body>
 </html>

@@ -16,7 +16,7 @@
 </head>
 <body>
    <div id = "header">
-      <h1 id = "SiteLogo"><em>Rate My Group<em></h1> 
+      <h1 id = "SiteLogo"><em><a href = 'rateMyGroup.php'>Rate My Group</a><em></h1> 
    </div>
    <div class = "contentWrapper">
    <?php
@@ -73,5 +73,21 @@
    <p>To rate another student, click the following link</p>
    <a href = "ratingsPage.php?uId=<?php echo $_GET['uId'];?>" class = "linkTextFormat">Class List</a>
    </div>
+   
+    <div id = "links">
+   <a class = "barLinkLink" href = "rateMyGroup.php" class = "linkTextFormat">
+      <div class = "barLinkDiv">Home</div>
+   </a>
+   
+   <a class = "barLinkLink"<?php echo "href = 'ratingsPage.php?uId=" . $_COOKIE['uID'] . "'";?> class = "linkTextFormat">
+      <div class = "barLinkDiv">Rate My Group Members!</div>
+   </a>
+   
+   <a class = "barLinkLink" href = "adminLogin.php" class = "linkTextFormat">
+      <div class = "barLinkDiv">Register student</div>
+   </a>
+   
+ </div>
+   
 </body>
 </html>
