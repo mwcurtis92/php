@@ -1,15 +1,12 @@
  <?php 
    //if credentials are not supplied via cookie, redirect them back to the login.
-echo "This is a test";
    if (!isset($_COOKIE["uID"]))
    {   
       header( 'Location: login.php' );
       die();
    }
-echo "this is the second test";
    //the credentials file, required on all php documents.
    require 'credentials.php';
-echo "this is the third test";
  ?>
  
  <!--
