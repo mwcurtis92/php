@@ -51,7 +51,7 @@
       
       if("" != trim($_POST['sName']) && $add == true)
       {        
-         $q = $db->prepare("INSERT INTO student (displayName, class) VALUES (?,?)") or die("ERROR! Contact your system admin");
+         $q = $db->prepare("INSERT INTO student (displayName, classNum) VALUES (?,?)") or die("ERROR! Contact your system admin");
          $q->bindParam(1, trim(ucwords($_POST['sName'])));
          $q->bindParam(2, $class);
          
